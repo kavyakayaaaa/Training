@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import DATA from '../Data'
 
-const Product = () => {
+const Picture = () => {
 
     const cardItem = (item) => {
         return (
@@ -11,7 +11,7 @@ const Product = () => {
                     <div class="card-body text-center">
                         <h5 class="card-title">{item.title}</h5>
                         <p className="lead">₹{item.price}</p>
-                        <NavLink to={`/products/${item.id}`} class="btn btn-outline-primary">Buy Now</NavLink>
+                        <NavLink to={`/products/${item.id}`} className="btn btn-outline-primary">Buy Now</NavLink>
                     </div>
 </div>
                 );
@@ -22,7 +22,7 @@ const Product = () => {
                     <div className="container py-5">
                         <div className="row">
                             <div className="col-12 text-center">
-                                <h1>Popular Products</h1>
+                                <h1>Popular Pictures</h1>
                                 <hr />
                             </div>
                         </div>
@@ -36,4 +36,4 @@ const Product = () => {
                 )
 }
 
-                export default Product
+                export default Picture

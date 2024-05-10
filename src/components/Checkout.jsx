@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { useSelector } from 'react-redux'
 
@@ -26,7 +25,7 @@ const Checkout = () => {
     const [phone, setphone] = useState('');
     const [address1, setaddress1] = useState('');
     const [address2, setaddress2] = useState('');
-    const [isChecked, setIsChecked] = useState('product1');
+    const [isChecked, setIsChecked] = useState('Picture1');
     const [isChecked1, setIsChecked1] = useState(false);
     const [isChecked2, setIsChecked2] = useState(false);
     const [isChecked3, setIsChecked3] = useState(false);
@@ -41,7 +40,7 @@ const Checkout = () => {
             address2: address2,
             email: email,
             pro:isChecked,
-            productcost: total
+            Picturecost: total
         }
         console.log(data);
         try {
@@ -117,7 +116,7 @@ const Checkout = () => {
                                     <input type="text" className="form-control" id="address2" placeholder="City" name='address2' value={address2} onChange={(e) => setaddress2(e.target.value)} required />
                                 </div>
                                 <div className="col-12">
-                                    <label htmlFor="username" className="form-label">Select Products</label>
+                                    <label htmlFor="username" className="form-label">Select Pictures</label>
                                     <div className="input-group has-validation">
                                         <input type="checkbox" checked={isChecked} onChange={handleCheckboxChange} />ORGANIC PRO 750<br/>
                                     </div>

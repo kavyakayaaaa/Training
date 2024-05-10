@@ -1,17 +1,16 @@
 import React from 'react'
-// import { useSelector } from 'react-redux'
-// import { useDispatch } from 'react-redux'
-// import {delItem} from '../redux/actions/index'
+import { useSelector, useDispatch } from 'react-redux'
+import {delItem} from '../redux/actions/index'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 
 const Cart = () => {
-    // const state = useSelector((state)=> state.addItem)
-    // const dispatch = useDispatch()
-    const delItem = delItem() //remove full line
+    const state = useSelector((state)=> state.addItem)
+    const dispatch = useDispatch()
+
     const handleClose = (item) => {
-        const dispatch =dispatch(delItem(item)) //remove only leftside what you reture.
+         dispatch(delItem(item)) //remove only leftside what you reture.
     }
 
     const cartItems = (cartItem) => {
@@ -64,9 +63,9 @@ const Cart = () => {
 
     return (
         <>
-            {/* {state.length === 0 && emptyCart()}
+            {state.length === 0 && emptyCart()}
             {state.length !== 0 && state.map(cartItems)}
-            {state.length !== 0 && button()} */}
+            {state.length !== 0 && button()}
         </>
     )
 }

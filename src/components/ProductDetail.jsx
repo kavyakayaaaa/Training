@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import { useState } from 'react';
 import DATA from '../Data';
 import { useDispatch } from 'react-redux';
-// import {addItem, delItem} from '../redux/actions/index'
+import {addItem, delItem} from '../redux/actions/index'
 
 const ProductDetail = () => {
     const [cartBtn, setCartBtn] = useState("Add to Cart")
@@ -18,18 +18,18 @@ const ProductDetail = () => {
 
     const handleCart = (product) => {
         if (cartBtn === "Add to Cart") {
-            // dispatch(addItem(product))
+            dispatch(addItem(product))
             setCartBtn("Remove from Cart")
         }
         else{
-            // dispatch(delItem(product))
+            dispatch(delItem(product))
             setCartBtn("Add to Cart")
         }
     }
 
     return (
         <>
-        <div className="container my-5 py-3">
+        <div className="container my-5" style={{ backgroundColor: 'skyblue' }}>
             <div className="row">
                 <div className="col-md-6 d-flex justify-content-center mx-auto product">
                     <img style={{ width: 500, height: 500 }} src={product.img} alt={product.title}  />

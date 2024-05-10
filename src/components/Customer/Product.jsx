@@ -3,14 +3,14 @@ import axios from 'axios';
 import '../../App.css';
 
 function Products() {
-    const [products, setProducts] = useState([]);
+    const [products, setPictures] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3001/products')
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setProducts(data);
+        setPictures(data);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);

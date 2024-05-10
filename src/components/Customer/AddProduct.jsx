@@ -1,13 +1,12 @@
 import React from 'react'
 import './RegistrationPage.css';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link,  } from 'react-router-dom';
 import axios from 'axios';
 
 function AddProduct() {
     const [pname, setpname] = useState('');
-    const history = useHistory();
+    const nagivate = useNavigate();
     const [error, setError] = useState('');
     const [password, setpassword] = useState('');
     const [qty, setqty] = useState('');
@@ -27,9 +26,6 @@ function AddProduct() {
         ppa:ppa,
         phone:phone,
         password:password
-        
-
-        
   
       }
       console.log(data);

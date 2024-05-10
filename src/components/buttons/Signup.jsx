@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { useState } from 'react';
 
 const Signup = () => {
-
+    const navigate = useNavigate();
     const [fullname, setfullname] = useState("");
     const [email, setemail] = useState("");
     const [pno, setpno] = useState("");
@@ -57,11 +57,11 @@ const Signup = () => {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            {/* <button className="btn btn-primary w-100 mb-4">
-                                <span className=""></span> <Link to='/farmersignup' style={{ color: '#FFF',textDecoration: 'none' }}>Customer Registration</Link>
-                            </button> */}
-                            <button className="btn btn-primary w-100 mb-4">
-                                <span className=""></span> <Link to='delsingup' style={{ color: '#FFF',textDecoration: 'none' }}>Delivery Registration</Link>
+                           <button className="btn btn-primary w-100 mb-4" style={{ color: '#FFF', textDecoration: 'none' }} data-bs-dismiss="modal" aria-label="Close" onClick={(e) => {e.preventDefault(); navigate('/farmersignup');}}>
+                                Customer Registration
+                            </button>
+                             <button className="btn btn-primary w-100 mb-4"style={{ color: '#FFF', textDecoration: 'none' }} data-bs-dismiss="modal" aria-label="Close" onClick={(e) => {e.preventDefault(); navigate('/delsingup');}}>
+                             Delivery Registration
                             </button>
                             <form onSubmit={handleSubmit}  method='post'>
                                 <div className="mb-3">
@@ -80,12 +80,7 @@ const Signup = () => {
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                                     <input type="password" className="form-control" id="exampleInputPassword1" name='password' value={password} onChange={(e) => setpassword(e.target.value)} required />
-                                </div>
-                                {/* <div className="mb-3">
-                                    <label htmlFor="exampleInput" className="form-label">Address</label>
-                                    <input type="text" className="form-control" id="exampleInput" name='address' value={address} onChange={(e) => setaddress(e.target.value)} required/>
-                                </div> */}
-                                
+                                </div>                             
                                 <button type="submit" className="btn btn-outline-primary w-100 mt-5" onClick={showAlert}>Register</button>
                             </form>
                         </div>

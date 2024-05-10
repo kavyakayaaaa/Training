@@ -20,17 +20,17 @@ function DeleteProduct() {
         
   
       }
-    //   console.log(data);
-    //   try {
-    //     const response = await axios.delete('http://localhost:3001/products/${pno}', data);
-    //     console.log(data);
-    //     console.log(response);
+      console.log(data);
+      try {
+        const response = await axios.delete('http://localhost:3001/products/${pno}', data);
+        console.log(data);
+        console.log(response);
        
-    //   } catch (error) {
-    //     console.log(error);
+      } catch (error) {
+        console.log(error);
   
   
-    //   }
+      }
     fetch(`http://localhost:3001/removeproduct/${pid}`, {
         method: 'DELETE',
         headers: {

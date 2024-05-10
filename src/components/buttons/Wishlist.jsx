@@ -1,6 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import {delItem} from '../redux/actions/index'
 import { NavLink } from 'react-router-dom'
 
@@ -32,19 +31,19 @@ function Wishlist() {
         </ul>
       )}
       <hr />
-      <h2>Products</h2>
+      <h2>Pictures</h2>
       <ul>
         <li>
-          Product A - $50
-          <button onClick={() => addToWishlist({ id: 1, name: 'Product A', price: 50 })}>Add to Wishlist</button>
+          Picture A - $500
+          <button onClick={() => addToWishlist({ id: 1, name: 'Picture A', price: 50 })}>Add to Wishlist</button>
         </li>
         <li>
-          Product B - $75
-          <button onClick={() => addToWishlist({ id: 2, name: 'Product B', price: 75 })}>Add to Wishlist</button>
+          Picture B - $750
+          <button onClick={() => addToWishlist({ id: 2, name: 'Picture B', price: 75 })}>Add to Wishlist</button>
         </li>
         <li>
-          Product C - $100
-          <button onClick={() => addToWishlist({ id: 3, name: 'Product C', price: 100 })}>Add to Wishlist</button>
+          Picture C - $1000
+          <button onClick={() => addToWishlist({ id: 3, name: 'Picture C', price: 100 })}>Add to Wishlist</button>
         </li>
       </ul>
     </div>
